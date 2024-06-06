@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Items List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+<div class="container">
+    <h2>Items List</h2>
+    <p>Total items added: {{ count }}</p>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_item' %}" class="btn btn-primary">Add More Items</a>
+</div>
 </body>
 </html>
